@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('cdek-widget', 'jquery', 'lodash', 'wp-i18n'), 'version' => 'b3f41f230baa645d1d10');
+<?php return array('dependencies' => array('cdek-widget', 'jquery', 'lodash', 'wp-i18n'), 'version' => '2f35bab9d5f60df1b95a');

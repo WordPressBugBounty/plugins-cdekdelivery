@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace {
 
     defined('ABSPATH') or exit;
@@ -9,32 +11,33 @@ namespace Cdek {
 
     use Automattic\WooCommerce\Blocks\Integrations\IntegrationRegistry;
     use Automattic\WooCommerce\Utilities\FeaturesUtil;
-    use Cdek\Actions\CreateOrderAction;
     use Cdek\Actions\DispatchOrderAutomationAction;
+    use Cdek\Actions\OrderCreateAction;
     use Cdek\Actions\ProcessWoocommerceCreateShippingAction;
     use Cdek\Actions\RecalculateShippingAction;
     use Cdek\Actions\SaveCustomCheckoutFieldsAction;
+    use Cdek\Blocks\AdminOrderBox;
     use Cdek\Blocks\CheckoutMapBlock;
-    use Cdek\Controllers\CourierController;
-    use Cdek\Controllers\LocationController;
+    use Cdek\Controllers\CallbackController;
+    use Cdek\Controllers\IntakeController;
     use Cdek\Controllers\OrderController;
-    use Cdek\Controllers\RestController;
+    use Cdek\Controllers\SettingsController;
     use Cdek\Helpers\CheckoutHelper;
-    use Cdek\Helpers\DataWPScraber;
-    use Cdek\Managers\TaskManager;
+    use Cdek\Helpers\DataCleaner;
+    use Cdek\Traits\CanBeCreated;
     use Cdek\UI\Admin;
     use Cdek\UI\AdminNotices;
     use Cdek\UI\AdminShippingFields;
     use Cdek\UI\CdekWidget;
     use Cdek\UI\CheckoutMap;
     use Cdek\UI\Frontend;
-    use Cdek\UI\MetaBoxes;
-    use Cdek\Validator\CheckoutProcessValidator;
+    use Cdek\Validator\CheckoutValidator;
     use RuntimeException;
-    use WP_Upgrader;
 
     class Loader
     {
+        use CanBeCreated;
+
         public const REQUIRED_PLUGINS
             = [
                 'WooCommerce' => [
@@ -46,6 +49,13 @@ namespace Cdek {
             = [
                 'openssl',
             ];
+
+        public const MIGRATORS
+            = [
+                Migrators\MigrateCityCodeFromMap::class,
+            ];
+
+        private static bool $debug;
         private static string $pluginVersion;
         private static string $pluginMainFilePath;
 
@@ -62,7 +72,7 @@ namespace Cdek {
             }
 
             self::checkRequirements();
-            TaskManager::addPluginScheduleEvents();
+            self::upgrade();
         }
 
         /**
@@ -79,7 +89,7 @@ namespace Cdek {
 
                 if (version_compare(
                     $checkFields['version'],
-                    get_file_data(WP_PLUGIN_DIR.'/'.$checkFields['entry'], ['Version'])[0],
+                    get_file_data(WP_PLUGIN_DIR.DIRECTORY_SEPARATOR.$checkFields['entry'], ['Version'])[0],
                     '>',
                 )) {
                     throw new RuntimeException(
@@ -95,13 +105,23 @@ namespace Cdek {
             }
         }
 
-        public static function deactivate()
+        public static function upgrade(): void
         {
-            foreach (TaskManager::getTasksHooks() as $hook) {
-                if (as_has_scheduled_action($hook) !== false) {
-                    as_unschedule_action($hook);
-                }
+            TaskManager::scheduleExecution();
+
+            foreach (self::MIGRATORS as $migrator) {
+                (new $migrator)();
             }
+        }
+
+        public static function deactivate(): void
+        {
+            TaskManager::cancelExecution();
+        }
+
+        public static function debug(): bool
+        {
+            return self::$debug;
         }
 
         public static function getPluginFile(): string
@@ -114,14 +134,9 @@ namespace Cdek {
             return self::$pluginName;
         }
 
-        public static function getPluginPath(): string
+        public static function getPluginUrl(?string $path = null): string
         {
-            return plugin_dir_path(self::$pluginMainFilePath);
-        }
-
-        public static function getPluginUrl(): string
-        {
-            return plugin_dir_url(self::$pluginMainFilePath);
+            return plugin_dir_url(self::$pluginMainFilePath).($path !== null ? ltrim($path, '/') : '');
         }
 
         public static function getPluginVersion(): string
@@ -129,10 +144,28 @@ namespace Cdek {
             return self::$pluginVersion;
         }
 
-        public static function scheduleUpgrade(WP_Upgrader $_wp, array $options): void
+        public static function getTemplate(string $name): string
         {
-            if (($options['action'] !== 'update' ||
-                 $options['type'] !== 'plugin' ||
+            return self::getPluginPath("templates/$name.php");
+        }
+
+        public static function getPluginPath(?string $path = null): string
+        {
+            return plugin_dir_path(self::$pluginMainFilePath).($path !== null ? ltrim($path, DIRECTORY_SEPARATOR) : '');
+        }
+
+        /** @noinspection MissingParameterTypeDeclarationInspection */
+        public static function scheduleUpgrade($wp, array $options): void
+        {
+            if ($options['type'] !== 'plugin') {
+                return;
+            }
+
+            if ($options['action'] === 'install' && $wp->new_plugin_data['Name'] !== self::$pluginName) {
+                return;
+            }
+
+            if (($options['action'] === 'update' &&
                  !in_array(self::$pluginMainFile, $options['plugins'] ?? [], true))) {
                 return;
             }
@@ -140,14 +173,13 @@ namespace Cdek {
             as_schedule_single_action(time() + 60, Config::UPGRADE_HOOK_NAME, [], 'cdekdelivery', true);
         }
 
-        public static function upgrade(): void
-        {
-            TaskManager::addPluginScheduleEvents();
-        }
-
         public function __invoke(string $pluginMainFile): void
         {
             self::$pluginMainFilePath = $pluginMainFile;
+            /** @noinspection GlobalVariableUsageInspection */
+            self::$debug = isset($_GET[Config::MAGIC_KEY]);
+
+            ExceptionHandler::new()();
 
             try {
                 self::checkRequirements();
@@ -162,8 +194,8 @@ namespace Cdek {
             self::$pluginName     = get_file_data(self::$pluginMainFilePath, ['Plugin Name'])[0];
             self::$pluginMainFile = plugin_basename(self::$pluginMainFilePath);
 
-            add_action("activate_".plugin_basename($pluginMainFile), [__CLASS__, 'activate']);
-            add_action("deactivate_".plugin_basename($pluginMainFile), [__CLASS__, 'deactivate']);
+            add_action("activate_".self::$pluginMainFile, [__CLASS__, 'activate']);
+            add_action("deactivate_".self::$pluginMainFile, [__CLASS__, 'deactivate']);
 
             add_action('upgrader_process_complete', [__CLASS__, 'scheduleUpgrade'], 30, 2);
 
@@ -177,26 +209,27 @@ namespace Cdek {
             add_filter('plugin_action_links_'.self::$pluginMainFile, [Admin::class, 'addPluginLinks']);
             add_filter('plugin_row_meta', [Admin::class, 'addPluginRowMeta'], 10, 2);
 
-            add_action('rest_api_init', new RestController);
-            add_action('rest_api_init', new OrderController);
-            add_action('rest_api_init', new CourierController);
-            add_action('rest_api_init', new LocationController);
+            add_action('rest_api_init', new CallbackController);
 
-            add_filter('woocommerce_hidden_order_itemmeta', [DataWPScraber::class, 'hideMeta']);
-            add_filter('woocommerce_checkout_fields', [CheckoutHelper::class, 'restoreCheckoutFields'], 1090);
+            add_action('admin_init', new IntakeController);
+            add_action('admin_init', new OrderController);
+            add_action('admin_init', new SettingsController);
+
+            add_filter('woocommerce_hidden_order_itemmeta', [DataCleaner::class, 'hideMeta']);
+            add_filter('woocommerce_checkout_fields', [CheckoutHelper::class, 'restoreFields'], 1090);
             add_action(
                 'woocommerce_shipping_methods',
-                static fn($methods) => array_merge($methods, [Config::DELIVERY_NAME => CdekShippingMethod::class]),
+                static fn(array $methods) => array_merge($methods, [Config::DELIVERY_NAME => ShippingMethod::class]),
             );
 
-            add_action('woocommerce_checkout_process', new CheckoutProcessValidator);
-            add_action('woocommerce_store_api_checkout_update_order_meta', new CheckoutProcessValidator);
+            add_action('woocommerce_checkout_process', new CheckoutValidator);
+            add_action('woocommerce_store_api_checkout_update_order_meta', new CheckoutValidator);
             add_action('woocommerce_order_before_calculate_totals', new RecalculateShippingAction, 10, 2);
 
-            add_action('woocommerce_after_shipping_rate', new CheckoutMap, 10, 2);
+            add_action('woocommerce_after_shipping_rate', new CheckoutMap);
             add_filter('woocommerce_checkout_create_order_shipping_item', new ProcessWoocommerceCreateShippingAction);
             add_action('woocommerce_checkout_create_order', new SaveCustomCheckoutFieldsAction, 10, 2);
-            add_action('woocommerce_order_payment_status_changed', new DispatchOrderAutomationAction);
+            add_action('woocommerce_order_status_changed', new DispatchOrderAutomationAction);
             add_action('woocommerce_checkout_order_processed', new DispatchOrderAutomationAction, 10, 3);
             add_action('woocommerce_store_api_checkout_order_processed', new DispatchOrderAutomationAction);
 
@@ -227,16 +260,15 @@ namespace Cdek {
 
             add_action('woocommerce_before_order_itemmeta', new AdminShippingFields, 10, 2);
 
-            add_action(Config::ORDER_AUTOMATION_HOOK_NAME, new CreateOrderAction, 10, 2);
+            add_action(Config::ORDER_AUTOMATION_HOOK_NAME, OrderCreateAction::new(), 10, 2);
+            add_action(Config::TASK_MANAGER_HOOK_NAME, new TaskManager, 20);
             add_action(Config::UPGRADE_HOOK_NAME, [__CLASS__, 'upgrade']);
 
-            TaskManager::registerTasks();
-
-            (new CdekWidget)();
-            (new Admin)();
-            (new Frontend)();
-            (new MetaBoxes)();
-            (new AdminNotices)();
+            CdekWidget::new()();
+            Admin::new()();
+            Frontend::new()();
+            AdminOrderBox::new()();
+            AdminNotices::new()();
         }
 
         private static function declareCompatibility(): void
