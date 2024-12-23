@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
