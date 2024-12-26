@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -34,6 +34,8 @@ Main plugin features:
 * Easy installation, integration into WooCommerce
 * Setting up store data: address, choice of tariff and type of shipment
 * Possibility of transferring current data on packaging and automatic calculation of the order weight
+* Compatible with [High-Performance Order Storage](https://woocommerce.com/document/high-performance-order-storage/)
+* Works well with [Block checkout](https://woocommerce.com/checkout-blocks/) and [Classic checkout](https://woocommerce.com/document/woocommerce-shortcodes/page-shortcodes/#checkout)
 
 ## Access to third-party services
 
@@ -72,6 +74,15 @@ All questions and comments on the use of the plugin can be asked at integrator@c
 * WP-90 Fixed 500 error when sending an order via API
 * WP-96 Fixed translations in the plugin
 * WP-100 Fixed creation of duplicate tasks from the API
+* WP-114 Fixed autocomplete cities in settings
+* WP-115 Fixed work with yookassa acquiring
+* WP-117 Fixed checkout, then post index empty
+* WP-118 Fixed bug with settings save
+* WP-124 Auto create order fix
+* WP-122 Checkout styles for select pick-up button resize for mobile
+* WP-129 Fixed empty value for custom tariff name
+* WP-130 Settings data updated after changes without screen reload
+* WP-131 Fixed bug with print barcode and invoice
 
 = 3.22 =
 * WP-30 Changed the logic of automatic order creation: added a selector for waiting for payment from payment systems
