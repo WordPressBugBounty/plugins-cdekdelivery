@@ -6,7 +6,7 @@
             "version_normalized": "2.4.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/defuse/php-encryption/v2.4.0/defuse-php-encryption-v2.4.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/defuse/php-encryption/v2.4.0/defuse-php-encryption-v2.4.0.zip",
                 "reference": "f53396c2d34225064647a05ca76c1da9d99e5828",
                 "shasum": ""
             },
@@ -70,7 +70,7 @@
             "version_normalized": "2.5.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/genkgo/php-asn1/v2.5.0/genkgo-php-asn1-v2.5.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/genkgo/php-asn1/v2.5.0/genkgo-php-asn1-v2.5.0.zip",
                 "reference": "42060ed45344789fb9f21f9f1864fc47b9e3507b",
                 "shasum": ""
             },
@@ -142,7 +142,7 @@
             "version_normalized": "2.7.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/constant_time_encoding/v2.7.0/paragonie-constant_time_encoding-v2.7.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/constant_time_encoding/v2.7.0/paragonie-constant_time_encoding-v2.7.0.zip",
                 "reference": "52a0d99e69f56b9ec27ace92ba56897fe6993105",
                 "shasum": ""
             },
@@ -206,7 +206,7 @@
             "version_normalized": "1.2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/easy-ecc/v1.2.0/paragonie-easy-ecc-v1.2.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/easy-ecc/v1.2.0/paragonie-easy-ecc-v1.2.0.zip",
                 "reference": "0af6405f5c7ce9c98594783a5c3aaf4ffb674bee",
                 "shasum": ""
             },
@@ -254,12 +254,12 @@
         },
         {
             "name": "paragonie/ecc",
-            "version": "v2.3.0",
-            "version_normalized": "2.3.0.0",
+            "version": "v2.4.0",
+            "version_normalized": "2.4.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/ecc/v2.3.0/paragonie-ecc-v2.3.0.zip",
-                "reference": "46ea6f3614aada164e89e87c695e324474c2b5a5",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/ecc/v2.4.0/paragonie-ecc-v2.4.0.zip",
+                "reference": "fdba22a506492eb6e5fe38c501c0df61eaf0b54c",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
             "suggest": {
                 "ext-openssl": "(PHP 8.1, OpenSSL 3+) Improved performance, less worries about side-channels"
             },
-            "time": "2024-05-01T14:04:05+00:00",
+            "time": "2025-01-21T17:53:03+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -333,7 +333,7 @@
             ],
             "support": {
                 "issues": "https://github.com/paragonie/phpecc/issues",
-                "source": "https://github.com/paragonie/phpecc/tree/v2.3.0"
+                "source": "https://github.com/paragonie/phpecc/tree/v2.4.0"
             },
             "install-path": "../paragonie/ecc"
         },
@@ -343,7 +343,7 @@
             "version_normalized": "2.2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/hidden-string/v2.2.0/paragonie-hidden-string-v2.2.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/hidden-string/v2.2.0/paragonie-hidden-string-v2.2.0.zip",
                 "reference": "87886ab8ed7abb61c8bcf8d67cd3d3527feedbf7",
                 "shasum": ""
             },
@@ -392,7 +392,7 @@
             "version_normalized": "1.1.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/paserk/v1.1.0/paragonie-paserk-v1.1.0.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/paserk/v1.1.0/paragonie-paserk-v1.1.0.zip",
                 "reference": "3cf1d9b9e42ae24ca67b438d56e779ab195c4707",
                 "shasum": ""
             },
@@ -439,7 +439,7 @@
             "version_normalized": "2.4.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/paseto/v2.4.4/paragonie-paseto-v2.4.4.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/paseto/v2.4.4/paragonie-paseto-v2.4.4.zip",
                 "reference": "b13137e23a8c6ba07c16cb81aececd45c7fe87dc",
                 "shasum": ""
             },
@@ -487,7 +487,7 @@
             "version_normalized": "9.99.100.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/random_compat/v9.99.100/paragonie-random_compat-v9.99.100.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/random_compat/v9.99.100/paragonie-random_compat-v9.99.100.zip",
                 "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a",
                 "shasum": ""
             },
@@ -534,7 +534,7 @@
             "version_normalized": "1.21.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/paragonie/sodium_compat/v1.21.1/paragonie-sodium_compat-v1.21.1.zip",
+                "url": "https://repo.cdek.ru/repository/php-public/paragonie/sodium_compat/v1.21.1/paragonie-sodium_compat-v1.21.1.zip",
                 "reference": "bb312875dcdd20680419564fe42ba1d9564b9e37",
                 "shasum": ""
             },
@@ -613,12 +613,12 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.47",
-            "version_normalized": "2.0.47.0",
+            "version": "2.0.48",
+            "version_normalized": "2.0.48.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.cdek.ru/repository/cdek-php/phpseclib/phpseclib/2.0.47/phpseclib-phpseclib-2.0.47.zip",
-                "reference": "b7d7d90ee7df7f33a664b4aea32d50a305d35adb",
+                "url": "https://repo.cdek.ru/repository/php-public/phpseclib/phpseclib/2.0.48/phpseclib-phpseclib-2.0.48.zip",
+                "reference": "eaa7be704b8b93a6913b69eb7f645a59d7731b61",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +636,7 @@
                 "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations.",
                 "ext-xml": "Install the XML extension to load XML formatted public keys."
             },
-            "time": "2024-02-26T04:55:38+00:00",
+            "time": "2024-12-14T21:03:54+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -700,8 +700,22 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.47"
+                "source": "https://github.com/phpseclib/phpseclib/tree/2.0.48"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/terrafrost",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpseclib",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpseclib/phpseclib",
+                    "type": "tidelift"
+                }
+            ],
             "install-path": "../phpseclib/phpseclib"
         }
     ],

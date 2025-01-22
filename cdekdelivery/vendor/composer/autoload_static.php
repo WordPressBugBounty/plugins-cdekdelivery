@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a
+class ComposerStaticInit089732374979f2cf5e147032c361c289
 {
     public static $files = array (
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
@@ -246,6 +246,7 @@ class ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a
         'Mdanter\\Ecc\\Crypto\\Key\\PublicKey' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Key/PublicKey.php',
         'Mdanter\\Ecc\\Crypto\\Key\\PublicKeyInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Key/PublicKeyInterface.php',
         'Mdanter\\Ecc\\Crypto\\Signature\\HasherInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Signature/HasherInterface.php',
+        'Mdanter\\Ecc\\Crypto\\Signature\\SchnorrSignature' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Signature/SchnorrSignature.php',
         'Mdanter\\Ecc\\Crypto\\Signature\\SignHasher' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Signature/SignHasher.php',
         'Mdanter\\Ecc\\Crypto\\Signature\\Signature' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Signature/Signature.php',
         'Mdanter\\Ecc\\Crypto\\Signature\\SignatureInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Crypto/Signature/SignatureInterface.php',
@@ -308,6 +309,7 @@ class ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a
         'Mdanter\\Ecc\\Primitives\\CurveFpInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/CurveFpInterface.php',
         'Mdanter\\Ecc\\Primitives\\CurveParameters' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/CurveParameters.php',
         'Mdanter\\Ecc\\Primitives\\GeneratorPoint' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/GeneratorPoint.php',
+        'Mdanter\\Ecc\\Primitives\\JacobianPoint' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/JacobianPoint.php',
         'Mdanter\\Ecc\\Primitives\\OptimizedCurveInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/OptimizedCurveInterface.php',
         'Mdanter\\Ecc\\Primitives\\Point' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/Point.php',
         'Mdanter\\Ecc\\Primitives\\PointInterface' => __DIR__ . '/..' . '/paragonie/ecc/src/Primitives/PointInterface.php',
@@ -488,9 +490,9 @@ class ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit10de7a93be05507e00c2e34b83c22c3a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit089732374979f2cf5e147032c361c289::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit089732374979f2cf5e147032c361c289::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit089732374979f2cf5e147032c361c289::$classMap;
 
         }, null, ClassLoader::class);
     }
