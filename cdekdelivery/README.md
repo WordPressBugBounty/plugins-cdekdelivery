@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 4.0.4
+Stable tag: 4.0.5
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -88,9 +88,9 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 * WP-130 Settings data updated after changes without screen reload
 * WP-131 Fixed bug with print barcode and invoice
 * WP-133 Fixed items total in order details for invoice
-* WP-133 Fixed items total in order details for invoice
 * WP-136 Ignore create order if order already exists
 * WP-138 Token decrypt fix
+* WP-143 Fixed 500 error related to response headers array on old Wordpress versions
 
 = 3.22 =
 * WP-30 Changed the logic of automatic order creation: added a selector for waiting for payment from payment systems
