@@ -151,6 +151,7 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
         'Cdek\\Model\\ShippingItem' => __DIR__ . '/../..' . '/src/Model/ShippingItem.php',
         'Cdek\\Model\\Tariff' => __DIR__ . '/../..' . '/src/Model/Tariff.php',
         'Cdek\\Model\\TaskResult' => __DIR__ . '/../..' . '/src/Model/TaskResult.php',
+        'Cdek\\Model\\Tax' => __DIR__ . '/../..' . '/src/Model/Tax.php',
         'Cdek\\Model\\ValidationResult' => __DIR__ . '/../..' . '/src/Model/ValidationResult.php',
         'Cdek\\Note' => __DIR__ . '/../..' . '/src/Note.php',
         'Cdek\\ShippingMethod' => __DIR__ . '/../..' . '/src/ShippingMethod.php',

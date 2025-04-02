@@ -70,6 +70,7 @@ return array(
     'Cdek\\Model\\ShippingItem' => $baseDir . '/src/Model/ShippingItem.php',
     'Cdek\\Model\\Tariff' => $baseDir . '/src/Model/Tariff.php',
     'Cdek\\Model\\TaskResult' => $baseDir . '/src/Model/TaskResult.php',
+    'Cdek\\Model\\Tax' => $baseDir . '/src/Model/Tax.php',
     'Cdek\\Model\\ValidationResult' => $baseDir . '/src/Model/ValidationResult.php',
     'Cdek\\Note' => $baseDir . '/src/Note.php',
     'Cdek\\ShippingMethod' => $baseDir . '/src/ShippingMethod.php',

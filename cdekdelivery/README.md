@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 4.1.6
+Stable tag: 4.1.9
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -75,7 +75,10 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 * WP-163 Fix error if no shipping methods found
 * WP-159 Fix error for paid on delivery with zero price
 * WP-156 Restore plugin settings on delivery zone page
-* WP-158 Fix missing delivery invoice information on order page
+* WP-158 Fixed missing delivery invoice information on order page
+* WP-173 Fixed save plugin settings with WP cache plugins
+* WP-160 Product tax settings now set in delivery invoice
+* WP-183 Fixed errors or warnings on admin pages
 
 = 4.0 =
 * WP-40 Replaced the map in the plugin settings with address input fields
