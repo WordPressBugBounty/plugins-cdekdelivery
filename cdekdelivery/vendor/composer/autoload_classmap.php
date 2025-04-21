@@ -57,6 +57,7 @@ return array(
     'Cdek\\Helpers\\LegacyTokenStorage' => $baseDir . '/src/Helpers/LegacyTokenStorage.php',
     'Cdek\\Helpers\\Logger' => $baseDir . '/src/Helpers/Logger.php',
     'Cdek\\Helpers\\ScheduleLocker' => $baseDir . '/src/Helpers/ScheduleLocker.php',
+    'Cdek\\Helpers\\ShippingDetector' => $baseDir . '/src/Helpers/ShippingDetector.php',
     'Cdek\\Helpers\\StringHelper' => $baseDir . '/src/Helpers/StringHelper.php',
     'Cdek\\Helpers\\Tokens' => $baseDir . '/src/Helpers/Tokens.php',
     'Cdek\\Helpers\\UI' => $baseDir . '/src/Helpers/UI.php',

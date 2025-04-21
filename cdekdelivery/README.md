@@ -3,8 +3,8 @@ Contributors: cdekit, caelan
 Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 6.5
-Stable tag: 4.1.10
+Tested up to: 6.8
+Stable tag: 4.1.12
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -82,6 +82,7 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 * WP-184 Fixed set PVZ code to order after checkout payment
 * WP-186 Fixes with item build in order creation
 * WP-190 Fixed set item tax value without NDS
+* WP-192 Avoid conflicts with other delivery plugins
 
 = 4.0 =
 * WP-40 Replaced the map in the plugin settings with address input fields

@@ -138,6 +138,7 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
         'Cdek\\Helpers\\LegacyTokenStorage' => __DIR__ . '/../..' . '/src/Helpers/LegacyTokenStorage.php',
         'Cdek\\Helpers\\Logger' => __DIR__ . '/../..' . '/src/Helpers/Logger.php',
         'Cdek\\Helpers\\ScheduleLocker' => __DIR__ . '/../..' . '/src/Helpers/ScheduleLocker.php',
+        'Cdek\\Helpers\\ShippingDetector' => __DIR__ . '/../..' . '/src/Helpers/ShippingDetector.php',
         'Cdek\\Helpers\\StringHelper' => __DIR__ . '/../..' . '/src/Helpers/StringHelper.php',
         'Cdek\\Helpers\\Tokens' => __DIR__ . '/../..' . '/src/Helpers/Tokens.php',
         'Cdek\\Helpers\\UI' => __DIR__ . '/../..' . '/src/Helpers/UI.php',
