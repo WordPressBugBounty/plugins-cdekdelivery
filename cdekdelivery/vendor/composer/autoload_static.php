@@ -88,6 +88,7 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
 
     public static $classMap = array (
         'Cdek\\Actions\\CalculateDeliveryAction' => __DIR__ . '/../..' . '/src/Actions/CalculateDeliveryAction.php',
+        'Cdek\\Actions\\CheckoutItemPriceAction' => __DIR__ . '/../..' . '/src/Actions/CheckoutItemPriceAction.php',
         'Cdek\\Actions\\DispatchOrderAutomationAction' => __DIR__ . '/../..' . '/src/Actions/DispatchOrderAutomationAction.php',
         'Cdek\\Actions\\FlushTokenCacheAction' => __DIR__ . '/../..' . '/src/Actions/FlushTokenCacheAction.php',
         'Cdek\\Actions\\GenerateBarcodeAction' => __DIR__ . '/../..' . '/src/Actions/GenerateBarcodeAction.php',
@@ -96,7 +97,6 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
         'Cdek\\Actions\\IntakeDeleteAction' => __DIR__ . '/../..' . '/src/Actions/IntakeDeleteAction.php',
         'Cdek\\Actions\\OrderCreateAction' => __DIR__ . '/../..' . '/src/Actions/OrderCreateAction.php',
         'Cdek\\Actions\\OrderDeleteAction' => __DIR__ . '/../..' . '/src/Actions/OrderDeleteAction.php',
-        'Cdek\\Actions\\ProcessWoocommerceCreateShippingAction' => __DIR__ . '/../..' . '/src/Actions/ProcessWoocommerceCreateShippingAction.php',
         'Cdek\\Actions\\RecalculateShippingAction' => __DIR__ . '/../..' . '/src/Actions/RecalculateShippingAction.php',
         'Cdek\\Actions\\SaveCustomCheckoutFieldsAction' => __DIR__ . '/../..' . '/src/Actions/SaveCustomCheckoutFieldsAction.php',
         'Cdek\\Actions\\SaveOfficeToSessionAction' => __DIR__ . '/../..' . '/src/Actions/SaveOfficeToSessionAction.php',
@@ -139,7 +139,6 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
         'Cdek\\Helpers\\LegacyTokenStorage' => __DIR__ . '/../..' . '/src/Helpers/LegacyTokenStorage.php',
         'Cdek\\Helpers\\Logger' => __DIR__ . '/../..' . '/src/Helpers/Logger.php',
         'Cdek\\Helpers\\ScheduleLocker' => __DIR__ . '/../..' . '/src/Helpers/ScheduleLocker.php',
-        'Cdek\\Helpers\\ShippingDetector' => __DIR__ . '/../..' . '/src/Helpers/ShippingDetector.php',
         'Cdek\\Helpers\\StringHelper' => __DIR__ . '/../..' . '/src/Helpers/StringHelper.php',
         'Cdek\\Helpers\\Tokens' => __DIR__ . '/../..' . '/src/Helpers/Tokens.php',
         'Cdek\\Helpers\\UI' => __DIR__ . '/../..' . '/src/Helpers/UI.php',
