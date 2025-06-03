@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 4.2.2
+Stable tag: 4.2.3
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -72,6 +72,7 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 * WP-200 Fixed errors with shipments detection
 * WP-201 Fixed error with shipment auto creation due to vat calculation
 * WP-203 Fixed vat calculation for waybills
+* WP-211 Fixed error with shipment creation on new checkout due to missing office
 
 = 4.1 =
 * WP-97 Cdek delivery logger

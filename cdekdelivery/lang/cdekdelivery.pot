@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ru\n"
-"Project-Id-Version: CDEKDelivery 4.2.2"
+"Project-Id-Version: CDEKDelivery 4.2.3"
 
 #: build/cdek-order-item.js:1
 msgid "Error saving UIN"
