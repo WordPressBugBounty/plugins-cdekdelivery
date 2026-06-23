@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit089732374979f2cf5e147032c361c289
+class ComposerStaticInitc84d8fca32f723d54966e0f651dea880
 {
     public static $files = array (
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
@@ -13,11 +13,11 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
     );
 
     public static $prefixLengthsPsr4 = array (
-        'p' => 
+        'p' =>
         array (
             'phpseclib\\' => 10,
         ),
-        'P' => 
+        'P' =>
         array (
             'ParagonIE\\Paseto\\' => 17,
             'ParagonIE\\Paserk\\' => 17,
@@ -25,62 +25,62 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
             'ParagonIE\\EasyECC\\' => 18,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
-        'M' => 
+        'M' =>
         array (
             'Mdanter\\Ecc\\' => 12,
         ),
-        'F' => 
+        'F' =>
         array (
             'FG\\' => 3,
         ),
-        'D' => 
+        'D' =>
         array (
             'Defuse\\Crypto\\' => 14,
         ),
-        'C' => 
+        'C' =>
         array (
             'Cdek\\' => 5,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'phpseclib\\' => 
+        'phpseclib\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
         ),
-        'ParagonIE\\Paseto\\' => 
+        'ParagonIE\\Paseto\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/paseto/src',
         ),
-        'ParagonIE\\Paserk\\' => 
+        'ParagonIE\\Paserk\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/paserk/src',
         ),
-        'ParagonIE\\HiddenString\\' => 
+        'ParagonIE\\HiddenString\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/hidden-string/src',
         ),
-        'ParagonIE\\EasyECC\\' => 
+        'ParagonIE\\EasyECC\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/easy-ecc/src',
         ),
-        'ParagonIE\\ConstantTime\\' => 
+        'ParagonIE\\ConstantTime\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
-        'Mdanter\\Ecc\\' => 
+        'Mdanter\\Ecc\\' =>
         array (
             0 => __DIR__ . '/..' . '/paragonie/ecc/src',
         ),
-        'FG\\' => 
+        'FG\\' =>
         array (
             0 => __DIR__ . '/..' . '/genkgo/php-asn1/lib',
         ),
-        'Defuse\\Crypto\\' => 
+        'Defuse\\Crypto\\' =>
         array (
             0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
         ),
-        'Cdek\\' => 
+        'Cdek\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -496,9 +496,9 @@ class ComposerStaticInit089732374979f2cf5e147032c361c289
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit089732374979f2cf5e147032c361c289::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit089732374979f2cf5e147032c361c289::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit089732374979f2cf5e147032c361c289::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc84d8fca32f723d54966e0f651dea880::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc84d8fca32f723d54966e0f651dea880::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc84d8fca32f723d54966e0f651dea880::$classMap;
 
         }, null, ClassLoader::class);
     }
