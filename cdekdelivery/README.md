@@ -3,8 +3,8 @@ Contributors: cdekit, au777
 Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 6.8
-Stable tag: 4.2.7
+Tested up to: 7.0
+Stable tag: 5.0.0
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -66,6 +66,9 @@ All questions and comments on the use of the plugin can be asked at integrator@c
 You can check out the plugin documentation at [site](https://cdek-it.github.io/wordpress/)
 
 == Changelog ==
+
+= 5.0 =
+* CMS-1327 Add support WordPress 7.0
 
 = 4.2 =
 * WP-167 Add tool to set Uin for gold items in order
