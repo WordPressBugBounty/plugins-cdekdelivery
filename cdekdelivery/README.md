@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 5.0.0
+Stable tag: 5.0.1
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -69,6 +69,9 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 
 = 5.0 =
 * CMS-1327 Add support WordPress 7.0
+* WP-301 Fixed validation fields on order update
+* WP-303 Update docs
+* WP-318 Fixed the pickup point selection reset (classic checkout)
 
 = 4.2 =
 * WP-167 Add tool to set Uin for gold items in order

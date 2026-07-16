@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.3\n"
 "Language: ru\n"
-"Project-Id-Version: CDEKDelivery 5.0.0"
+"Project-Id-Version: CDEKDelivery 5.0.1"
 
 #. translators: 1: Tariff name 2: Minimum delivery days 3: Maximum delivery
 #. days
@@ -1020,4 +1020,3 @@ msgstr ""
 #: cdek.php
 msgid "CDEKDelivery"
 msgstr ""
-

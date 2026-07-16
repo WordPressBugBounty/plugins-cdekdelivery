@@ -15,5 +15,6 @@ return array(
     'Mdanter\\Ecc\\' => array($vendorDir . '/paragonie/ecc/src'),
     'FG\\' => array($vendorDir . '/genkgo/php-asn1/lib'),
     'Defuse\\Crypto\\' => array($vendorDir . '/defuse/php-encryption/src'),
+    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Cdek\\' => array($baseDir . '/src'),
 );
