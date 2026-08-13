@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('cdek-widget', 'lodash', 'react', 'wc-blocks-checkout', 'wc-settings', 'wp-element', 'wp-i18n'), 'version' => '2023923ce53df7bad51b');
+<?php return array('dependencies' => array('cdek-widget', 'lodash', 'react', 'wc-blocks-checkout', 'wc-blocks-data-store', 'wc-settings', 'wp-data', 'wp-element', 'wp-i18n'), 'version' => '833c5a690805a0db2daa');
