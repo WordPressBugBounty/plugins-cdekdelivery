@@ -9,9 +9,21 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.3\n"
 "Language: ru\n"
-"Project-Id-Version: CDEKDelivery 5.0.2"
+"Project-Id-Version: CDEKDelivery 5.1.0"
 
-#: src/Blocks/CheckoutMapBlock.php:107
+#: src/Traits/SettingsFields.php:382
+msgid "Height calculation mode. 1 (default) uses the legacy per-item ranking algorithm. Values above 1 up to 1.15 switch to the volume-based algorithm and apply the value as a multiplier compensating for free space inside the box (e.g. 1.1 = +10%). Must be between 1 and 1.15."
+msgstr ""
+
+#: src/Traits/SettingsFields.php:381
+msgid "Package volume safety ratio"
+msgstr ""
+
+#: src/ShippingMethod.php:232
+msgid "Package volume safety ratio must be between 1 and 1.15."
+msgstr ""
+
+#: src/Blocks/CheckoutMapBlock.php:120
 msgid "Delivery mode of the currently selected CDEK tariff"
 msgstr ""
 

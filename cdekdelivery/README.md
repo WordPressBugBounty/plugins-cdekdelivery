@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 5.0.2
+Stable tag: 5.1.0
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -66,6 +66,12 @@ All questions and comments on the use of the plugin can be asked at integrator@c
 You can check out the plugin documentation at [site](https://cdek-it.github.io/wordpress/)
 
 == Changelog ==
+
+= 5.1 =
+* WP-324 New logic for calculating dimensions
+* WP-334 Fixed an error when retrieving rates
+* WP-337 Optimized adding products to the cart
+* WP-330 Updated instructions
 
 = 5.0 =
 * CMS-1327 Add support WordPress 7.0
