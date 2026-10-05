@@ -4,7 +4,7 @@ Tags: ecommerce, shipping, delivery, woocommerce
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 5.1.0
+Stable tag: 5.1.1
 License: GPLv3
 
 Integration with CDEK delivery for your WooCommerce store.
@@ -72,6 +72,9 @@ You can check out the plugin documentation at [site](https://cdek-it.github.io/w
 * WP-334 Fixed an error when retrieving rates
 * WP-337 Optimized adding products to the cart
 * WP-330 Updated instructions
+* WP-290 Displaying fields for international delivery
+* WP-292 Fixed WooCommerce delivery settings
+* WP-311 Creating a waybill creation task before order payment
 
 = 5.0 =
 * CMS-1327 Add support WordPress 7.0
