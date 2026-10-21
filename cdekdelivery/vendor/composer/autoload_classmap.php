@@ -47,6 +47,7 @@ return array(
     'Cdek\\Exceptions\\External\\LegacyAuthException' => $baseDir . '/src/Exceptions/External/LegacyAuthException.php',
     'Cdek\\Exceptions\\External\\UnparsableAnswerException' => $baseDir . '/src/Exceptions/External/UnparsableAnswerException.php',
     'Cdek\\Exceptions\\InvalidPhoneException' => $baseDir . '/src/Exceptions/InvalidPhoneException.php',
+    'Cdek\\Exceptions\\OfficeNotSelectedException' => $baseDir . '/src/Exceptions/OfficeNotSelectedException.php',
     'Cdek\\Exceptions\\OrderNotFoundException' => $baseDir . '/src/Exceptions/OrderNotFoundException.php',
     'Cdek\\Exceptions\\ScheduledTaskException' => $baseDir . '/src/Exceptions/ScheduledTaskException.php',
     'Cdek\\Exceptions\\ShippingNotFoundException' => $baseDir . '/src/Exceptions/ShippingNotFoundException.php',

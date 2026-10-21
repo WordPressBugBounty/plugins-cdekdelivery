@@ -133,6 +133,7 @@ class ComposerStaticInit31abe95a52c241731ac0de6cbbaf6d54
         'Cdek\\Exceptions\\External\\LegacyAuthException' => __DIR__ . '/../..' . '/src/Exceptions/External/LegacyAuthException.php',
         'Cdek\\Exceptions\\External\\UnparsableAnswerException' => __DIR__ . '/../..' . '/src/Exceptions/External/UnparsableAnswerException.php',
         'Cdek\\Exceptions\\InvalidPhoneException' => __DIR__ . '/../..' . '/src/Exceptions/InvalidPhoneException.php',
+        'Cdek\\Exceptions\\OfficeNotSelectedException' => __DIR__ . '/../..' . '/src/Exceptions/OfficeNotSelectedException.php',
         'Cdek\\Exceptions\\OrderNotFoundException' => __DIR__ . '/../..' . '/src/Exceptions/OrderNotFoundException.php',
         'Cdek\\Exceptions\\ScheduledTaskException' => __DIR__ . '/../..' . '/src/Exceptions/ScheduledTaskException.php',
         'Cdek\\Exceptions\\ShippingNotFoundException' => __DIR__ . '/../..' . '/src/Exceptions/ShippingNotFoundException.php',
